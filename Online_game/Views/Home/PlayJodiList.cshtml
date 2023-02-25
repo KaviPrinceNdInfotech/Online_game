@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Online_game.Models.Domain.PlayJodi>
+
+@{
+    ViewBag.Title = "PlayJodiList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">List - Play Jodi</h4>
+            <div class="navbar-nav-scroll" style="height:80em;">
+                <table class="table table-hover" style="width:100px;">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GameName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CreateDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsActive)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GameNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Amount)
+                            </th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GameName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreateDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsActive)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GameNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Amount)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("UpdateEmployee", new {id = item.ID })"><i class="mdi mdi-database-edit"></i></a> |
+                                    <a href="@Url.Action("DeleteEmployee", new {id = item.ID })"><i class="mdi mdi-delete"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+

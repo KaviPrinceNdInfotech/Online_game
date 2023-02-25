@@ -1,0 +1,68 @@
+﻿@model Online_game.Models.ViewModel.PlayHarupViewModel
+@{
+    ViewBag.Title = "AddHarupData";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <h4 class="card-title">Play Harup</h4>
+            <p class="card-description"> Add - Play Harup </p>
+            @if (TempData["msg"] != null)
+            {
+                <div class="bg-green">
+                    <span style="color:green"> @TempData["msg"]</span>
+                </div>
+            }
+
+        <form class="forms-sample" method="post">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Aside, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Aside, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Aside, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Bside, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Bside, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Bside, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.GameId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.GameId, ViewBag.games as IEnumerable<SelectListItem>, "---Select Game---", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.GameId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CreateDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CreateDate, new { htmlAttributes = new { @class = "form-control",@type="Date" } })
+                    @Html.ValidationMessageFor(model => model.CreateDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+            <button type="reset" class="btn btn-light">Cancel</button>
+        </form>
+        </div>
+    </div>
+</div>
+

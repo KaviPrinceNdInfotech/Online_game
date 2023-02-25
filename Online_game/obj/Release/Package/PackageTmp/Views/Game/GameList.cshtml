@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Online_game.Models.Domain.Game>
+
+@{
+    ViewBag.Title = "GameList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-5 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">List - Game</h4>
+            <div class="navbar-nav-scroll">
+                <table class="table table-hover" style="width:100px;">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GameName)
+                            </th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GameName)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("UpdateGame", new {id = item.Id })"><i class="mdi mdi-database-edit"></i></a> |
+                                    <a href="@Url.Action("DeleteGame", new {id = item.Id })"><i class="mdi mdi-delete"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

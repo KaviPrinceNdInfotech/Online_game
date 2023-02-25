@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Online_game.Models.Domain.PlayHarup>
+
+@{
+    ViewBag.Title = "ListHarupData";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">List - Employee</h4>
+            <div class="navbar-nav-scroll" style="height:80em;">
+                <table class="table table-hover" style="width:100px;">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Aside)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Bside)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GameId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Amount)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CreateDate)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Aside)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Bside)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GameId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Amount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreateDate)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("UpdateEmployee", new {id = item.Id })"><i class="mdi mdi-database-edit"></i></a> |
+                                    <a href="@Url.Action("DeleteEmployee", new {id = item.Id })"><i class="mdi mdi-delete"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+

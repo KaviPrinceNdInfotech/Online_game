@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="onlinegame_AdminModelStoreContainer" CdmEntityContainer="onlinegame_AdminEntities">
+    <EntitySetMapping Name="AddMoneys">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.AddMoney">
+        <MappingFragment StoreEntitySet="AddMoneys">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AddResults">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.AddResult">
+        <MappingFragment StoreEntitySet="AddResults">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="GameId" ColumnName="GameId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BiddingHistorys">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.BiddingHistory">
+        <MappingFragment StoreEntitySet="BiddingHistorys">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GameName" ColumnName="GameName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameNumbers">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.GameNumber">
+        <MappingFragment StoreEntitySet="GameNumbers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="GameId" ColumnName="GameId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameRateLists">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.GameRateList">
+        <MappingFragment StoreEntitySet="GameRateLists">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Historys">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.History">
+        <MappingFragment StoreEntitySet="Historys">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HowToPlays">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.HowToPlay">
+        <MappingFragment StoreEntitySet="HowToPlays">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginMasters">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.LoginMaster">
+        <MappingFragment StoreEntitySet="LoginMasters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayHarups">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.PlayHarup">
+        <MappingFragment StoreEntitySet="PlayHarup">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Aside" ColumnName="Aside" />
+          <ScalarProperty Name="Bside" ColumnName="Bside" />
+          <ScalarProperty Name="GameId" ColumnName="GameId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RefrenceReports">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.RefrenceReport">
+        <MappingFragment StoreEntitySet="RefrenceReport">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="WinAmount" ColumnName="WinAmount" />
+          <ScalarProperty Name="AdminCommission" ColumnName="AdminCommission" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LastActivityOn" ColumnName="LastActivityOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reportwithdrawals">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.Reportwithdrawal">
+        <MappingFragment StoreEntitySet="Reportwithdrawals">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="AdminCommission" ColumnName="AdminCommission" />
+          <ScalarProperty Name="TransactionAmount" ColumnName="TransactionAmount" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LastActivityOn" ColumnName="LastActivityOn" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TermsAndConditions">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.TermsAndCondition">
+        <MappingFragment StoreEntitySet="TermsAndConditions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WalletTransactions">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.WalletTransaction">
+        <MappingFragment StoreEntitySet="WalletTransactions">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SubAmount" ColumnName="SubAmount" />
+          <ScalarProperty Name="AddAmount" ColumnName="AddAmount" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WithdrawFunds">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.WithdrawFund">
+        <MappingFragment StoreEntitySet="WithdrawFunds">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Mobile_no" ColumnName="Mobile_no" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.Game">
+        <MappingFragment StoreEntitySet="Games">
+          <ScalarProperty Name="GameName" ColumnName="GameName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameNumberHarups">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.GameNumberHarup">
+        <MappingFragment StoreEntitySet="GameNumberHarup">
+          <ScalarProperty Name="Bside" ColumnName="Bside" />
+          <ScalarProperty Name="Aside" ColumnName="Aside" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.Result">
+        <MappingFragment StoreEntitySet="Result">
+          <ScalarProperty Name="BsideId" ColumnName="BsideId" />
+          <ScalarProperty Name="AsideId" ColumnName="AsideId" />
+          <ScalarProperty Name="JodiId" ColumnName="JodiId" />
+          <ScalarProperty Name="GameId" ColumnName="GameId" />
+          <ScalarProperty Name="TypeGameId" ColumnName="TypeGameId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameTypes">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.GameType">
+        <MappingFragment StoreEntitySet="GameType">
+          <ScalarProperty Name="GameTypeName" ColumnName="GameTypeName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayJodis">
+      <EntityTypeMapping TypeName="onlinegame_AdminModel.PlayJodi">
+        <MappingFragment StoreEntitySet="PlayJodis">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="GameNumber" ColumnName="GameNumber" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="GameName" ColumnName="GameName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="onlinegame_AdminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AddMoneys">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="AddResults">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="GameId" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="BiddingHistorys">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameName" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="GameNumbers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" />
+    <Property Name="GameId" Type="int" />
+  </EntityType>
+  <EntityType Name="GameRateLists">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Historys">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="HowToPlays">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="LoginMasters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PlayHarup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Aside" Type="int" />
+    <Property Name="Bside" Type="int" />
+    <Property Name="GameId" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="PlayJodis">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameName" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="GameNumber" Type="int" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="RefrenceReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="11" StoreGeneratedPattern="Computed" />
+    <Property Name="WinAmount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="AdminCommission" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="LastActivityOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Reportwithdrawals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="11" StoreGeneratedPattern="Computed" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="AdminCommission" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TransactionAmount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="LastActivityOn" Type="datetime" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TermsAndConditions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WalletTransactions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="AddAmount" Type="int" />
+    <Property Name="SubAmount" Type="int" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="WithdrawFunds">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="CreateDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="int" />
+  </EntityType>
+  <EntityType Name="GameNumberHarup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Aside" Type="int" />
+    <Property Name="Bside" Type="int" />
+  </EntityType>
+  <EntityType Name="Games">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameName" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="GameType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameTypeName" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Mobile_no" Type="nvarchar" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreateDate" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="TypeGameId" Type="int" />
+    <Property Name="GameId" Type="int" />
+    <Property Name="JodiId" Type="int" />
+    <Property Name="AsideId" Type="nvarchar" MaxLength="50" />
+    <Property Name="BsideId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="onlinegame_AdminModelStoreContainer">
+    <EntitySet Name="AddMoneys" EntityType="Self.AddMoneys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AddResults" EntityType="Self.AddResults" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BiddingHistorys" EntityType="Self.BiddingHistorys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameNumbers" EntityType="Self.GameNumbers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameRateLists" EntityType="Self.GameRateLists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Historys" EntityType="Self.Historys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HowToPlays" EntityType="Self.HowToPlays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginMasters" EntityType="Self.LoginMasters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayHarup" EntityType="Self.PlayHarup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayJodis" EntityType="Self.PlayJodis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RefrenceReport" EntityType="Self.RefrenceReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reportwithdrawals" EntityType="Self.Reportwithdrawals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TermsAndConditions" EntityType="Self.TermsAndConditions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WalletTransactions" EntityType="Self.WalletTransactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WithdrawFunds" EntityType="Self.WithdrawFunds" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameNumberHarup" EntityType="Self.GameNumberHarup" Schema="onlinegame_Admin" store:Type="Tables" />
+    <EntitySet Name="Games" EntityType="Self.Games" Schema="onlinegame_Admin" store:Type="Tables" />
+    <EntitySet Name="GameType" EntityType="Self.GameType" Schema="onlinegame_Admin" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="onlinegame_Admin" store:Type="Tables" />
+    <EntitySet Name="Result" EntityType="Self.Result" Schema="onlinegame_Admin" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

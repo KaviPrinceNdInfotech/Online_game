@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dab516ad57334dc6a0814ddf53176e2d" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="onlinegame_AdminModel.AddMoney" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.AddResult" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.BiddingHistory" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.GameNumber" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.GameRateList" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.History" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.HowToPlay" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.LoginMaster" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.PlayHarup" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.RefrenceReport" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.Reportwithdrawal" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.TermsAndCondition" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.WalletTransaction" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.WithdrawFund" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.Registration" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.Game" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.GameNumberHarup" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.Result" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.GameType" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="onlinegame_AdminModel.PlayJodi" Width="1.5" PointX="11.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Online_game.Models.ViewModel.AddMoneyView>
+
+@{
+    ViewBag.Title = "ListMoney";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-5 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">List - User Money</h4>
+            <div class="navbar-nav-scroll">
+                <table class="table table-hover" style="width:100px;">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Amount)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Amount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                @*<td>
+                                    <a href="@Url.Action("UpdateEmployee", new {id = item.Id })"><i class="mdi mdi-database-edit"></i></a> |
+                                    <a href="@Url.Action("DeleteEmployee", new {id = item.Id })"><i class="mdi mdi-delete"></i></a>
+                                </td>*@
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+

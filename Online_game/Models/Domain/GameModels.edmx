@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="onlinegame_AdminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AddMoneys">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="AddResults">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="Amount" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="BiddingHistorys">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="TotalAmount" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="GameNumbers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="int" />
+          <Property Name="GameId" Type="int" />
+        </EntityType>
+        <EntityType Name="GameRateLists">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Historys">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="HowToPlays">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LoginMasters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PlayHarup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aside" Type="int" />
+          <Property Name="Bside" Type="int" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="Amount" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="PlayJodis">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="GameNumber" Type="int" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="RefrenceReport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="varchar" MaxLength="11" StoreGeneratedPattern="Computed" />
+          <Property Name="WinAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="AdminCommission" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastActivityOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Reportwithdrawals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="varchar" MaxLength="11" StoreGeneratedPattern="Computed" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="AdminCommission" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TransactionAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastActivityOn" Type="datetime" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TermsAndConditions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="WalletTransactions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="AddAmount" Type="int" />
+          <Property Name="SubAmount" Type="int" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="WithdrawFunds">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="CreateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="GameNumberHarup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aside" Type="int" />
+          <Property Name="Bside" Type="int" />
+        </EntityType>
+        <EntityType Name="Games">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameName" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="GameType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameTypeName" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Mobile_no" Type="nvarchar" MaxLength="20" />
+          <Property Name="Password" Type="nvarchar" MaxLength="200" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreateDate" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="TypeGameId" Type="int" />
+          <Property Name="GameId" Type="int" />
+          <Property Name="JodiId" Type="int" />
+          <Property Name="AsideId" Type="nvarchar" MaxLength="50" />
+          <Property Name="BsideId" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="onlinegame_AdminModelStoreContainer">
+          <EntitySet Name="AddMoneys" EntityType="Self.AddMoneys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AddResults" EntityType="Self.AddResults" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BiddingHistorys" EntityType="Self.BiddingHistorys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameNumbers" EntityType="Self.GameNumbers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameRateLists" EntityType="Self.GameRateLists" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Historys" EntityType="Self.Historys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HowToPlays" EntityType="Self.HowToPlays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginMasters" EntityType="Self.LoginMasters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayHarup" EntityType="Self.PlayHarup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayJodis" EntityType="Self.PlayJodis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RefrenceReport" EntityType="Self.RefrenceReport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reportwithdrawals" EntityType="Self.Reportwithdrawals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TermsAndConditions" EntityType="Self.TermsAndConditions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WalletTransactions" EntityType="Self.WalletTransactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WithdrawFunds" EntityType="Self.WithdrawFunds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameNumberHarup" EntityType="Self.GameNumberHarup" Schema="onlinegame_Admin" store:Type="Tables" />
+          <EntitySet Name="Games" EntityType="Self.Games" Schema="onlinegame_Admin" store:Type="Tables" />
+          <EntitySet Name="GameType" EntityType="Self.GameType" Schema="onlinegame_Admin" store:Type="Tables" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="onlinegame_Admin" store:Type="Tables" />
+          <EntitySet Name="Result" EntityType="Self.Result" Schema="onlinegame_Admin" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="onlinegame_AdminModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AddMoney">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AddResult">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="BiddingHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="GameNumber">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="GameId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="GameRateList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="HowToPlay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LoginMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PlayHarup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aside" Type="Int32" />
+          <Property Name="Bside" Type="Int32" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RefrenceReport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="WinAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AdminCommission" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Reportwithdrawal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AdminCommission" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TransactionAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityOn" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TermsAndCondition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WalletTransaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="AddAmount" Type="Int32" />
+          <Property Name="SubAmount" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WithdrawFund">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="onlinegame_AdminEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddMoneys" EntityType="Self.AddMoney" />
+          <EntitySet Name="AddResults" EntityType="Self.AddResult" />
+          <EntitySet Name="BiddingHistorys" EntityType="Self.BiddingHistory" />
+          <EntitySet Name="GameNumbers" EntityType="Self.GameNumber" />
+          <EntitySet Name="GameRateLists" EntityType="Self.GameRateList" />
+          <EntitySet Name="Historys" EntityType="Self.History" />
+          <EntitySet Name="HowToPlays" EntityType="Self.HowToPlay" />
+          <EntitySet Name="LoginMasters" EntityType="Self.LoginMaster" />
+          <EntitySet Name="PlayHarups" EntityType="Self.PlayHarup" />
+          <EntitySet Name="RefrenceReports" EntityType="Self.RefrenceReport" />
+          <EntitySet Name="Reportwithdrawals" EntityType="Self.Reportwithdrawal" />
+          <EntitySet Name="TermsAndConditions" EntityType="Self.TermsAndCondition" />
+          <EntitySet Name="WalletTransactions" EntityType="Self.WalletTransaction" />
+          <EntitySet Name="WithdrawFunds" EntityType="Self.WithdrawFund" />
+          <EntitySet Name="Registrations" EntityType="onlinegame_AdminModel.Registration" />
+          <EntitySet Name="Games" EntityType="onlinegame_AdminModel.Game" />
+          <EntitySet Name="GameNumberHarups" EntityType="onlinegame_AdminModel.GameNumberHarup" />
+          <EntitySet Name="Results" EntityType="onlinegame_AdminModel.Result" />
+          <EntitySet Name="GameTypes" EntityType="onlinegame_AdminModel.GameType" />
+          <EntitySet Name="PlayJodis" EntityType="onlinegame_AdminModel.PlayJodi" />
+        </EntityContainer>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GameNumberHarup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aside" Type="Int32" />
+          <Property Name="Bside" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="TypeGameId" Type="Int32" />
+          <Property Name="GameId" Type="Int32" />
+          <Property Name="JodiId" Type="Int32" />
+          <Property Name="AsideId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BsideId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GameType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameTypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PlayJodi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="GameNumber" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="onlinegame_AdminModelStoreContainer" CdmEntityContainer="onlinegame_AdminEntities">
+          <EntitySetMapping Name="AddMoneys">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.AddMoney">
+              <MappingFragment StoreEntitySet="AddMoneys">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddResults">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.AddResult">
+              <MappingFragment StoreEntitySet="AddResults">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BiddingHistorys">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.BiddingHistory">
+              <MappingFragment StoreEntitySet="BiddingHistorys">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GameName" ColumnName="GameName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameNumbers">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.GameNumber">
+              <MappingFragment StoreEntitySet="GameNumbers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameRateLists">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.GameRateList">
+              <MappingFragment StoreEntitySet="GameRateLists">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Historys">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.History">
+              <MappingFragment StoreEntitySet="Historys">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HowToPlays">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.HowToPlay">
+              <MappingFragment StoreEntitySet="HowToPlays">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginMasters">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.LoginMaster">
+              <MappingFragment StoreEntitySet="LoginMasters">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayHarups">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.PlayHarup">
+              <MappingFragment StoreEntitySet="PlayHarup">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Aside" ColumnName="Aside" />
+                <ScalarProperty Name="Bside" ColumnName="Bside" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RefrenceReports">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.RefrenceReport">
+              <MappingFragment StoreEntitySet="RefrenceReport">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="WinAmount" ColumnName="WinAmount" />
+                <ScalarProperty Name="AdminCommission" ColumnName="AdminCommission" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastActivityOn" ColumnName="LastActivityOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reportwithdrawals">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.Reportwithdrawal">
+              <MappingFragment StoreEntitySet="Reportwithdrawals">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="AdminCommission" ColumnName="AdminCommission" />
+                <ScalarProperty Name="TransactionAmount" ColumnName="TransactionAmount" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastActivityOn" ColumnName="LastActivityOn" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TermsAndConditions">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.TermsAndCondition">
+              <MappingFragment StoreEntitySet="TermsAndConditions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WalletTransactions">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.WalletTransaction">
+              <MappingFragment StoreEntitySet="WalletTransactions">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SubAmount" ColumnName="SubAmount" />
+                <ScalarProperty Name="AddAmount" ColumnName="AddAmount" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WithdrawFunds">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.WithdrawFund">
+              <MappingFragment StoreEntitySet="WithdrawFunds">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Mobile_no" ColumnName="Mobile_no" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.Game">
+              <MappingFragment StoreEntitySet="Games">
+                <ScalarProperty Name="GameName" ColumnName="GameName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameNumberHarups">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.GameNumberHarup">
+              <MappingFragment StoreEntitySet="GameNumberHarup">
+                <ScalarProperty Name="Bside" ColumnName="Bside" />
+                <ScalarProperty Name="Aside" ColumnName="Aside" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.Result">
+              <MappingFragment StoreEntitySet="Result">
+                <ScalarProperty Name="BsideId" ColumnName="BsideId" />
+                <ScalarProperty Name="AsideId" ColumnName="AsideId" />
+                <ScalarProperty Name="JodiId" ColumnName="JodiId" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="TypeGameId" ColumnName="TypeGameId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameTypes">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.GameType">
+              <MappingFragment StoreEntitySet="GameType">
+                <ScalarProperty Name="GameTypeName" ColumnName="GameTypeName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayJodis">
+            <EntityTypeMapping TypeName="onlinegame_AdminModel.PlayJodi">
+              <MappingFragment StoreEntitySet="PlayJodis">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="GameNumber" ColumnName="GameNumber" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="GameName" ColumnName="GameName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

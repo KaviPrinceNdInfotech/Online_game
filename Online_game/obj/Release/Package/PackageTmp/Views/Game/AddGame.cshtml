@@ -1,0 +1,36 @@
+﻿@model Online_game.Models.Domain.Game
+
+@{
+    ViewBag.Title = "AddGame";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <h4 class="card-title">Game</h4>
+            <p class="card-description"> Add - Game </p>
+            @if (TempData["msg"] != null)
+            {
+                <div class="bg-green">
+                    <span style="color:green"> @TempData["msg"]</span>
+                </div>
+            }
+
+            <form class="forms-sample" method="post">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.GameName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.GameName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.GameName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+                <button type="reset" class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

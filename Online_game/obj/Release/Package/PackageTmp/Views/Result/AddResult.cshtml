@@ -1,0 +1,149 @@
+﻿@model Online_game.Models.ViewModel.ResultViewModel
+@{
+    ViewBag.Title = "AddResult";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <h4 class="card-title">Result</h4>
+            <p class="card-description"> Add - Result</p>
+            @if (TempData["msg"] != null)
+            {
+                <div class="bg-green">
+                    <span style="color:green"> @TempData["msg"]</span>
+                </div>
+            }
+
+        <form class="forms-sample" method="post">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CreateDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CreateDate, new { htmlAttributes = new { @class = "form-control", @type = "Date" } })
+                    @Html.ValidationMessageFor(model => model.CreateDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TypeGameId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(x => x.TypeGameId, new List<SelectListItem>
+                    {
+                     new SelectListItem{Text="Paly Jodi",Value="1"},
+                     new SelectListItem{Text="Play Hurup",Value="2"}
+                     }, "-----Select Type------", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TypeGameId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.GameId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.GameId, ViewBag.GameName as IEnumerable<SelectListItem>, "---Select Game---", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.GameId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.JodiId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.JodiId, new SelectList(""), "---Select Game Number---", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.JodiId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AsideId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.AsideId, new SelectList(""), "---Select Game Number---", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.AsideId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BsideId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.BsideId, new SelectList(""), "---Select Game Number---", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.BsideId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+            <button type="reset" class="btn btn-light">Cancel</button>
+        </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        $("#TypeGameId").change(function () {
+            var leadId = $(this).val();
+            $.ajax({
+                type: "post",
+                url: "/Result/GetListJodi?id=" + leadId,
+                contentType: "html",
+                success: function (response) {
+                    $("#JodiId").empty();
+                    $.each(response, function (i, response) {
+                        $("#JodiId").append('<option value="'
+                            + response.Value + '">'
+                            + response.Text + '</option>');
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#TypeGameId").change(function () {
+            var leadId = $(this).val();
+            $.ajax({
+                type: "post",
+                url: "/Result/GetListHarup?id=" + leadId,
+                contentType: "html",
+                success: function (response) {
+                    $("#AsideId").empty();
+                    $.each(response, function (i, response) {
+                        $("#AsideId").append('<option value="'
+                            + response.Value + '">'
+                            + response.Text + '</option>');
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#TypeGameId").change(function () {
+            var leadId = $(this).val();
+            $.ajax({
+                type: "post",
+                url: "/Result/GetListHarup?id=" + leadId,
+                contentType: "html",
+                success: function (response) {
+                    $("#BsideId").empty();
+                    $.each(response, function (i, response) {
+                        $("#BsideId").append('<option value="'
+                            + response.Value + '">'
+                            + response.Text + '</option>');
+                    });
+                }
+            });
+        });
+    });
+</script>
