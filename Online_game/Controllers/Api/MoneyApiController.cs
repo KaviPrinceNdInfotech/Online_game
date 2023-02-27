@@ -163,6 +163,7 @@ namespace Online_game.Controllers.Api
                         Status = 200,
                         model.Amount,
                         model.Description,
+                        model.UserId,
                         Message = "All fields are requried"
                     });
                 }
@@ -196,6 +197,7 @@ namespace Online_game.Controllers.Api
             try
             {
                 var data = (from a in ent.WithdrawFunds
+                            where a.UserId == id
                             select new WithdrawHistoryDTO
                             {
                                 Amount = (int)a.Amount,

@@ -68,7 +68,7 @@ namespace Online_game.Controllers.Api
             }
         }
 
-        [HttpGet, Route("Result/BiddingHistory/{id}")]
+        [HttpGet, Route("ResultApi/BiddingHistory/{id}")]
         public JsonResult BiddingHistory(int id)
         {
             try
