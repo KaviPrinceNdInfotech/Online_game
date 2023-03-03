@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using Online_game.Models.ViewModel;
 using Online_game.Models.Domain;
 using System.Web.Security;
+using Online_game.Models.ApiViewModel;
+using System.Web.Http.Results;
+using System.Web.Services.Description;
 
 namespace Online_game.Controllers
 {
@@ -49,7 +52,55 @@ namespace Online_game.Controllers
         }
         public ActionResult Dashboard()
         {
+            ViewBag.customer = ent.Registrations.ToList().Count();
+            ViewBag.Gamelist = ent.Games.ToList().Count();
+            ViewBag.Bidding = ent.BiddingHistorys.ToList().Count();
+
+            //ViewBag.totalproduct = ent.Products.ToList().Count();
             return View();
         }
-    }
+        public ActionResult Userlist()
+        {
+            try
+            {
+                var data = ent.Registrations.ToList();
+                return View(data);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Server Error" + ex.Message);
+            }
+        }
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChangePassword(ForgetPassword model)
+        {
+                var message = "";
+                if (ModelState.IsValid)
+                {
+                    if (model.NewPassword == model.ConfirmPassword)
+                    {
+                        var data = ent.LoginMasters.FirstOrDefault(x => x.Password == model.CurrentPassword);
+                    if (data != null)
+                    {
+                        data.Password = model.NewPassword;
+                        ent.SaveChanges();
+                        message = "Password change successfully";
+                    }
+                    }
+                }
+            else
+            {
+                message = "Something invalid";
+            }
+            ViewBag.Message = message;
+            return View(model);
+        }
+    }      
+        
 }

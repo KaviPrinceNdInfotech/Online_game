@@ -269,6 +269,7 @@
       <DependentUpon>GameModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModel\AddMoneyViewModel.cs" />
+    <Compile Include="Models\ViewModel\ForgetPassword.cs" />
     <Compile Include="Models\ViewModel\GameModel.cs" />
     <Compile Include="Models\ViewModel\LoginModel.cs" />
     <Compile Include="Models\ViewModel\PaymentInitiateModel.cs" />
@@ -469,7 +470,6 @@
     <Content Include="Views\Result\AddResult.cshtml" />
     <Content Include="Views\Money\AddMoney.cshtml" />
     <Content Include="Views\Money\ListMoney.cshtml" />
-    <Content Include="Views\Result\ShowResult.cshtml" />
     <Content Include="Views\Game\GameList.cshtml" />
     <Content Include="Views\Game\AddGame.cshtml" />
     <Content Include="Views\Game\UpdateGame.cshtml" />
@@ -477,6 +477,9 @@
     <Content Include="Views\Payment\Success.cshtml" />
     <Content Include="Views\Payment\Failed.cshtml" />
     <Content Include="Views\Payment\PaymentPage.cshtml" />
+    <Content Include="Views\Profile\ChangePassword.cshtml" />
+    <Content Include="Views\Result\ResultList.cshtml" />
+    <Content Include="Views\Profile\Userlist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Online_game.Models.Domain.Result>
+
+@{
+    ViewBag.Title = "ResultList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>ResultList</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeGameId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JodiId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AsideId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BsideId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeGameId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JodiId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AsideId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BsideId)
+        </td>
+    </tr>
+}
+
+</table>

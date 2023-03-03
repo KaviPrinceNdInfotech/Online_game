@@ -54,10 +54,17 @@
                                 }
                             </div>
                         </a>
+
+
                         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
                             <a class="dropdown-item" href="#">
                                 <i class="mdi mdi-cached me-2 text-success"></i> Activity Log
                             </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/Profile/ChangePassword">
+                                <i class="mdi mdi-cached me-2 text-success"></i> ChangePassword
+                            </a>
+                        
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/Profile/Login">
                                 <i class="mdi mdi-logout me-2 text-primary"></i> Signout
@@ -104,40 +111,25 @@
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
                     </li>
-                    @*<li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Play Jodi</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
-            </a>
-            <div class="collapse" id="ui-basic1">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="/Home/AddPlayJodi">Add Game</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/Home/PlayJodiList">List Game</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Play Harup</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
-            </a>
-            <div class="collapse" id="ui-basic2">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="/PlayHarup/AddHarupData">Add Game</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/PlayHarup/ListHarupData">List Game</a></li>
-                </ul>
-            </div>
-        </li>*@
-
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
-                            <span class="menu-title">Game</span>
+                            <span class="menu-title">User</span>
                             <i class="menu-arrow"></i>
                             <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                         </a>
                         <div class="collapse" id="ui-basic1">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/Profile/Userlist">User list</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
+                            <span class="menu-title">Game</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic2">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="/Game/AddGame">Add Game</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="/Game/GameList">List Game</a></li>
@@ -154,7 +146,7 @@
                         <div class="collapse" id="ui-basic3">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="/Result/AddResult">Add Result</a></li>
-                                @*<li class="nav-item"> <a class="nav-link" href="/Result/ShowResult">List Result</a></li>*@
+                                <li class="nav-item"> <a class="nav-link" href="/Result/ResultList">Show Result</a></li>
                             </ul>
                         </div>
                     </li>
@@ -183,10 +175,12 @@
                         <div class="collapse" id="ui-basic5">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="/Payment/Index">Payment</a></li>
-                              
+
                             </ul>
                         </div>
                     </li>
+
+
 
 
                 </ul>

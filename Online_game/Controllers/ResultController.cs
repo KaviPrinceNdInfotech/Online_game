@@ -106,31 +106,45 @@ namespace Online_game.Controllers
             }
             return Json(data, JsonRequestBehavior.AllowGet);
         }
-        
-        public ActionResult ShowResult()
+
+        //public ActionResult ShowResult()
+        //{
+        //    try
+        //    {
+        //        var data = (from g in ent.Results
+        //                    join r in ent.Games on g.Id equals r.Id into table1
+        //                    from r in table1.ToList()
+        //                    join j in ent.PlayJodis on g.JodiId equals j.GameNumber into table2
+        //                    from j in table2.ToList()
+        //                    select new ShowResultViewModel
+        //                    {
+        //                        GameName = r.GameName,
+        //                        GameNumber = (int)j.GameNumber,
+        //                        Amount = (int)j.Amount
+
+        //                    }).ToList();
+        //        return View(data);
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        throw new Exception("Server Error" + ex.Message);
+        //    }
+
+        //}
+
+        public ActionResult ResultList()
         {
             try
             {
-                var data = (from g in ent.Results
-                            join r in ent.Games on g.Id equals r.Id into table1
-                            from r in table1.ToList()
-                            join j in ent.PlayJodis on g.JodiId equals j.GameNumber into table2
-                            from j in table2.ToList()
-                            select new ShowResultViewModel
-                            {
-                                GameName = r.GameName,
-                                GameNumber = (int)j.GameNumber,
-                                Amount = (int)j.Amount
-
-                            }).ToList(); 
-                    return View(data);
+                var data = ent.Results.ToList();
+                return View(data);
             }
             catch (Exception ex)
             {
 
                 throw new Exception("Server Error" + ex.Message);
             }
-            
         }
     }
 }
