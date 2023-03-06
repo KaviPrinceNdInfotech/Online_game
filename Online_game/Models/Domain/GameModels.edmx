@@ -147,6 +147,7 @@
           <Property Name="Description" Type="varchar(max)" />
           <Property Name="CreateDate" Type="nvarchar" MaxLength="50" />
           <Property Name="UserId" Type="int" />
+          <Property Name="IsApproved" Type="bit" />
         </EntityType>
         <EntityType Name="GameNumberHarup">
           <Key>
@@ -349,6 +350,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="CreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
+          <Property Name="IsApproved" Type="Boolean" />
         </EntityType>
         <EntityContainer Name="onlinegame_AdminEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AddMoneys" EntityType="Self.AddMoney" />
@@ -572,6 +574,7 @@
           <EntitySetMapping Name="WithdrawFunds">
             <EntityTypeMapping TypeName="onlinegame_AdminModel.WithdrawFund">
               <MappingFragment StoreEntitySet="WithdrawFunds">
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

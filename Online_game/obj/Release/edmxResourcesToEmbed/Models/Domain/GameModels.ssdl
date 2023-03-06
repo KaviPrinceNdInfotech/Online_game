@@ -142,6 +142,7 @@
     <Property Name="Description" Type="varchar(max)" />
     <Property Name="CreateDate" Type="nvarchar" MaxLength="50" />
     <Property Name="UserId" Type="int" />
+    <Property Name="IsApproved" Type="bit" />
   </EntityType>
   <EntityType Name="GameNumberHarup">
     <Key>

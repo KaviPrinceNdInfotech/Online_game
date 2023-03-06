@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Online_game.Models.ApiViewModel;
 using Online_game.Models.Domain;
 using Online_game.Models.ViewModel;
 
@@ -36,7 +37,6 @@ namespace Online_game.Controllers
                     TempData["msg"] = "All fields are requried.";
                     return View();
                 }
-                //var add = ent.AddMoneys.FirstOrDefault(x =>x.UserId == Convert.ToInt32(Session["UserId"]));
                 var data = ent.AddMoneys.FirstOrDefault(x =>x.UserId == model.UserId);
                 if(data != null)
                 {
@@ -87,5 +87,26 @@ namespace Online_game.Controllers
                 throw;
             }
         }
+
+        public ActionResult UpdateStatus(int id)
+        {
+            ent.Database.ExecuteSqlCommand(@"update WithdrawFunds set IsApproved=case when IsApproved=1 then 0 else 1 end where Id= " + id);
+            return RedirectToAction("WithdrawHistory");
+        }
+        public ActionResult WithdrawHistory()
+        {
+            try
+            {
+                var data = ent.WithdrawFunds.ToList();
+                return View(data);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Server Error" + ex.Message);
+            }
+        }
+
+
     }
-}
+    }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\New Project\Shubu Code\Online_Game(06-06-2022)\Online_game\Online_game\Models\Domain\GameModels.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Online_Game(06-06-2022)\Online_Game(06-06-2022)\Online_game\Online_game\Models\Domain\GameModels.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -19,5 +19,6 @@ namespace Online_game.Models.Domain
         public string Description { get; set; }
         public string CreateDate { get; set; }
         public Nullable<int> UserId { get; set; }
+        public Nullable<bool> IsApproved { get; set; }
     }
 }

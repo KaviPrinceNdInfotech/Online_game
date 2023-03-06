@@ -25,7 +25,7 @@ namespace Online_game.Controllers.Api
                 if(data != null)
                 {
                     var money = ent.AddMoneys.FirstOrDefault(x => x.UserId == data.id);
-                    Session["UserId"] = data.id;
+                    //Session["UserId"] = data.id;
                     if(money == null)
                     {
                         int Amount = 0;

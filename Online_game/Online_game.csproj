@@ -480,6 +480,7 @@
     <Content Include="Views\Profile\ChangePassword.cshtml" />
     <Content Include="Views\Result\ResultList.cshtml" />
     <Content Include="Views\Profile\Userlist.cshtml" />
+    <Content Include="Views\Money\WithdrawHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

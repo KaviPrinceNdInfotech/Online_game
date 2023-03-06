@@ -138,6 +138,7 @@
     <EntitySetMapping Name="WithdrawFunds">
       <EntityTypeMapping TypeName="onlinegame_AdminModel.WithdrawFund">
         <MappingFragment StoreEntitySet="WithdrawFunds">
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="Id" ColumnName="Id" />

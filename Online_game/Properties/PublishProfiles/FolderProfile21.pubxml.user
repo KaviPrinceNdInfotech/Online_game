@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\Publish\Online_game</_PublishTargetUrl>
-    <History>True|2023-02-27T10:48:08.1074020Z;True|2023-02-18T13:41:07.5856907+05:30;</History>
+    <History>True|2023-03-06T06:38:47.4556314Z;True|2023-03-04T13:20:57.0711716+05:30;True|2023-02-27T16:18:08.1074020+05:30;True|2023-02-18T13:41:07.5856907+05:30;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -433,10 +433,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/22/2019 01:06:16</publishTime>
     </File>
     <File Include="bin/Online_game.dll">
-      <publishTime>02/27/2023 16:18:06</publishTime>
+      <publishTime>03/06/2023 12:08:45</publishTime>
     </File>
     <File Include="bin/Online_game.pdb">
-      <publishTime>02/27/2023 16:18:06</publishTime>
+      <publishTime>03/06/2023 12:08:45</publishTime>
     </File>
     <File Include="bin/Razorpay.dll">
       <publishTime>10/18/2022 10:47:12</publishTime>
@@ -753,6 +753,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Money/ListMoney.cshtml">
       <publishTime>08/23/2022 15:31:42</publishTime>
     </File>
+    <File Include="Views/Money/WithdrawHistory.cshtml">
+      <publishTime>03/05/2023 17:24:49</publishTime>
+    </File>
     <File Include="Views/Payment/Failed.cshtml">
       <publishTime>12/15/2022 13:08:30</publishTime>
     </File>
@@ -771,14 +774,23 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/PlayHarup/ListHarupData.cshtml">
       <publishTime>06/15/2022 17:46:52</publishTime>
     </File>
+    <File Include="Views/Profile/ChangePassword.cshtml">
+      <publishTime>03/03/2023 18:47:52</publishTime>
+    </File>
     <File Include="Views/Profile/Dashboard.cshtml">
-      <publishTime>06/08/2022 14:12:00</publishTime>
+      <publishTime>03/03/2023 23:52:32</publishTime>
     </File>
     <File Include="Views/Profile/Login.cshtml">
       <publishTime>06/09/2022 18:37:50</publishTime>
     </File>
+    <File Include="Views/Profile/Userlist.cshtml">
+      <publishTime>03/05/2023 17:21:03</publishTime>
+    </File>
     <File Include="Views/Result/AddResult.cshtml">
       <publishTime>06/17/2022 17:50:18</publishTime>
+    </File>
+    <File Include="Views/Result/ResultList.cshtml">
+      <publishTime>03/05/2023 17:22:04</publishTime>
     </File>
     <File Include="Views/Result/ShowResult.cshtml">
       <publishTime>06/21/2022 18:24:12</publishTime>
@@ -787,7 +799,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/06/2022 12:33:22</publishTime>
     </File>
     <File Include="Views/Shared/_AdminLayout.cshtml">
-      <publishTime>12/15/2022 13:17:38</publishTime>
+      <publishTime>03/05/2023 17:06:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>06/08/2022 13:59:02</publishTime>

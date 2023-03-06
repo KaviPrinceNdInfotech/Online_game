@@ -130,6 +130,7 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="CreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="UserId" Type="Int32" />
+    <Property Name="IsApproved" Type="Boolean" />
   </EntityType>
   <EntityContainer Name="onlinegame_AdminEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AddMoneys" EntityType="Self.AddMoney" />

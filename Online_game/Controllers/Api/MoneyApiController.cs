@@ -25,7 +25,7 @@ namespace Online_game.Controllers.Api
                 var Jodiamount = Jodidata.Amount;
                 var Harupdata = ent.PlayHarups.FirstOrDefault();
                 var Harupamount = Harupdata.Amount;
-                if (Jodidata.CreateDate > DateTime.Now && Harupdata.CreateDate > DateTime.Now)
+                if (Jodidata.CreateDate > DateTime.Now.Date && Harupdata.CreateDate > DateTime.Now)
                 {
                     if (result.JodiId.ToString() == Jodidata.GameName.ToString())
                     {
@@ -38,11 +38,12 @@ namespace Online_game.Controllers.Api
                                 watl.CreateDate = DateTime.Now;
                                 watl.AddAmount = (int)Jodiamount;
                                 watl.UserId = id;
+                                ent.SaveChanges();
                             }
                             ent.WalletTransactions.Add(watl);
                             ent.SaveChanges();
                         }
-                        ent.SaveChanges();
+                        //ent.SaveChanges();
                     }
                     else
                     {
@@ -56,11 +57,12 @@ namespace Online_game.Controllers.Api
                                 watl.CreateDate = DateTime.Now;
                                 watl.SubAmount = (int)Jodiamount;
                                 watl.UserId = id;
+                                ent.SaveChanges();
                             }
                             ent.WalletTransactions.Add(watl);
                             ent.SaveChanges();
                         }
-                        ent.SaveChanges();
+                        //ent.SaveChanges();
                     }
                     if (result.AsideId.ToString() == Harupdata.Aside.ToString())
                     {
@@ -73,11 +75,12 @@ namespace Online_game.Controllers.Api
                                 watl.CreateDate = DateTime.Now;
                                 watl.AddAmount = (int)Harupamount;
                                 watl.UserId = id;
+                                //ent.SaveChanges();
                             }
                             ent.WalletTransactions.Add(watl);
                             ent.SaveChanges();
                         }
-                        ent.SaveChanges();
+                        //ent.SaveChanges();
 
                     }
                     else
@@ -91,11 +94,12 @@ namespace Online_game.Controllers.Api
                                 watl.CreateDate = DateTime.Now;
                                 watl.SubAmount = (int)Harupamount;
                                 watl.UserId = id;
+                                ent.SaveChanges();
                             }
                             ent.WalletTransactions.Add(watl);
                             ent.SaveChanges();
                         }
-                        ent.SaveChanges();
+                        //ent.SaveChanges();
                     }
                     if (result.BsideId.ToString() == Harupdata.Bside.ToString())
                     {
@@ -108,11 +112,12 @@ namespace Online_game.Controllers.Api
                                 watl.CreateDate = DateTime.Now;
                                 watl.AddAmount = (int)Harupamount;
                                 watl.UserId = id;
+                                ent.SaveChanges();
                             }
                             ent.WalletTransactions.Add(watl);
                             ent.SaveChanges();
                         }
-                        ent.SaveChanges();
+                        //ent.SaveChanges();
                     }
                     else
                     {
@@ -125,11 +130,12 @@ namespace Online_game.Controllers.Api
                                 watl.CreateDate = DateTime.Now;
                                 watl.SubAmount = (int)Harupamount;
                                 watl.UserId = id;
+                               ent.SaveChanges();
                             }
                             ent.WalletTransactions.Add(watl);
                             ent.SaveChanges();
                         }
-                        ent.SaveChanges();
+                        //ent.SaveChanges();
                     }
                 }
                 var Total = (from s in ent.AddMoneys 
@@ -167,12 +173,24 @@ namespace Online_game.Controllers.Api
                         Message = "All fields are requried"
                     });
                 }
+                var data = ent.AddMoneys.FirstOrDefault(x => x.UserId == model.UserId);
+                if (data != null)
+                {
+                    var total = data.Amount - model.Amount;
+                    if (total != null)
+                    {
+                        data.Amount = total;
+                        ent.SaveChanges();
+                    }
+                    
+                }
                 WithdrawFund wdf = new WithdrawFund()
                 {
                     Amount = model.Amount,
                     Description = model.Description,
                     CreateDate = DateTime.Now.ToString(),
-                    UserId = Convert.ToInt32(Session["UserId"])
+                    // UserId = Convert.ToInt32(Session["UserId"]),
+                    UserId = model.UserId,
                 };
                 ent.WithdrawFunds.Add(wdf);
                 ent.SaveChanges();

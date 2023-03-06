@@ -72,6 +72,25 @@ namespace Online_game.Controllers
                 throw new Exception("Server Error" + ex.Message);
             }
         }
+
+        public ActionResult DeleteUser(int id)
+        {
+            try
+            {
+                var data = ent.Registrations.FirstOrDefault(x =>x.id == id);
+                if (data != null)
+                {
+                    ent.Registrations.Remove(data);
+                    ent.SaveChanges();
+                }
+                return RedirectToAction("Userlist");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Server Error" + ex.Message);
+            }
+        }
         public ActionResult ChangePassword()
         {
             return View();

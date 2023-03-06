@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Online_game.Models.Domain.WithdrawFund>
+
+@{
+    ViewBag.Title = "WithdrawHistory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h4 class="card-title">List - Withdraw</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>Approval</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @if (item.IsApproved.HasValue)
+                {
+                    @Html.ActionLink("Approved", "UpdateStatus", new { id = item.Id }, new { @class = "btn btn-success" })
+                }
+                else
+                {
+                    @Html.ActionLink("Disapproved", "UpdateStatus", new { id = item.Id }, new { @class = "btn btn-danger" })
+                }
+            </td>
+
+        </tr>
+    }
+
+</table>
