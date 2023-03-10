@@ -59,17 +59,18 @@ namespace Online_game.Controllers
             //ViewBag.totalproduct = ent.Products.ToList().Count();
             return View();
         }
-        public ActionResult Userlist()
+        public ActionResult Userlist(string Searchby, string search)
         {
-            try
+            if (Searchby == "Name")
             {
-                var data = ent.Registrations.ToList();
-                return View(data);
-            }
-            catch (Exception ex)
-            {
+                var model = ent.Registrations.Where(emp => emp.Name == search || search == null).ToList();
+                return View(model);
 
-                throw new Exception("Server Error" + ex.Message);
+            }
+            else
+            {
+                var model = ent.Registrations.Where(emp => emp.Name.StartsWith(search) || search == null).ToList();
+                return View(model);
             }
         }
 
@@ -120,6 +121,8 @@ namespace Online_game.Controllers
             ViewBag.Message = message;
             return View(model);
         }
+
+     
     }      
         
 }

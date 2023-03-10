@@ -7,7 +7,7 @@ namespace Online_game.Models.ApiViewModel
 {
     public class WalletTransctionDTO
     {
-        public string CreateDate { get; set; }
+        public string CreateDate {  get; set; }
         public Nullable<int> AddAmount { get; set; }
         public Nullable<int> SubAmount { get; set; }
     }
