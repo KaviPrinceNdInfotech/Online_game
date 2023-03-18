@@ -55,8 +55,7 @@ namespace Online_game.Controllers
             ViewBag.customer = ent.Registrations.ToList().Count();
             ViewBag.Gamelist = ent.Games.ToList().Count();
             ViewBag.Bidding = ent.BiddingHistorys.ToList().Count();
-
-            //ViewBag.totalproduct = ent.Products.ToList().Count();
+            
             return View();
         }
         public ActionResult Userlist(string Searchby, string search)

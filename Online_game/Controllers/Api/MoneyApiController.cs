@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using Online_game.Models.ApiViewModel;
@@ -191,7 +192,9 @@ namespace Online_game.Controllers.Api
                     CreateDate = DateTime.Now.ToString(),
                     // UserId = Convert.ToInt32(Session["UserId"]),
                     UserId = model.UserId,
+
                 };
+                wdf.IsApproved = true;
                 ent.WithdrawFunds.Add(wdf);
                 ent.SaveChanges();
                 return Json(new

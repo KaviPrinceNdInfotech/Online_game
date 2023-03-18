@@ -7,6 +7,15 @@
 
 <h4 class="card-title">List -User</h4>
 
+<p>
+    @using (Html.BeginForm("Userlist", "Profile", FormMethod.Get))
+    {
+        <b> Search by</b> @*@Html.RadioButton("searchby", "Name", true)<b> Name</b>*@        
+        @Html.TextBox("search") <input type="submit" value=" Search" />
+    }
+</p>
+
+
 <table class="table">
     <tr>
         <th>

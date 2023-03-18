@@ -22,32 +22,33 @@
     <div class="col-md-4 stretch-card grid-margin">
         <div class="card bg-gradient-danger card-img-holder text-white">
             <div class="card-body">
-                <img src="~/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                @*<h4 class="font-weight-normal mb-3">
-                    Users  <i class="mdi mdi-chart-line mdi-24px float-right"></i>
-                </h4>*@
+                <img src="~/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />              
                 <div class="card-wrap">
                     <div class="card-header">
-                        <h4>Total User</h4>
-                    </div>
-                    <div class="card-body">
-                        @ViewBag.customer
-                    </div>
-                </div>
-                
+                        <a href="/Profile/Userlist">
+                            <span>Total User</span>
+                            <div class="card-body">
+                                @ViewBag.customer
+                            </div>
+                        </a>
+                    </div>        
+            </div>                
             </div>
         </div>
     </div>
     <div class="col-md-4 stretch-card grid-margin">
         <div class="card bg-gradient-info card-img-holder text-white">
             <div class="card-body">
-                <img src="~/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />               
+                <img src="~/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+
                 <div class="card-wrap">
                     <div class="card-header">
-                        <h4>Total Games</h4>
-                    </div>
-                    <div class="card-body">
-                        @ViewBag.Gamelist
+                        <a href="/Game/GameList">
+                            <span>Total Games</span>
+                            <div class="card-body">
+                                @ViewBag.Gamelist
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -59,10 +60,12 @@
                 <img src="~/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                 <div class="card-wrap">
                     <div class="card-header">
-                        <h4>Total Bidding</h4>
-                    </div>
-                    <div class="card-body">
-                        @ViewBag.Bidding
+                        @*<a href="/Game/GameList">*@
+                            <span>Total Bidding</span>
+                            <div class="card-body">
+                                @ViewBag.Bidding
+                            </div>
+                        @*</a>*@                       
                     </div>
                 </div>
             </div>
