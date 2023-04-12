@@ -161,6 +161,8 @@
     <EntitySetMapping Name="Games">
       <EntityTypeMapping TypeName="onlinegame_AdminModel.Game">
         <MappingFragment StoreEntitySet="Games">
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
           <ScalarProperty Name="GameName" ColumnName="GameName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>

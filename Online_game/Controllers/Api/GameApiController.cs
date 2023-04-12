@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Online_game.Models.Domain;
 using Online_game.Models.ApiViewModel;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 
 namespace Online_game.Controllers.Api
 {
@@ -19,11 +20,15 @@ namespace Online_game.Controllers.Api
         {
             try
             {
+                DateTime time = Convert.ToDateTime(DateTime.Now.ToString("HH:mm"));
                 var data1 = (from p in ent.Games
+                             where p.StartTime == DateTime.Parse("HH:mm:ss") || p.EndTime == DateTime.Parse("HH:mm:ss")
                              select new GamesDTO
                              {
                                  Id = p.Id,
-                                 GameName = p.GameName
+                                 GameName = p.GameName,
+                                 StartTime = time,
+                                 EndTime = time,
                              }).ToList();
                 var data2 = (from n in ent.GameNumbers
                              select new GameNumberDTO { 
@@ -86,7 +91,9 @@ namespace Online_game.Controllers.Api
                              select new GamesDTO
                              {
                                  Id = p.Id,
-                                 GameName = p.GameName
+                                 GameName = p.GameName,
+                                 StartTime = DateTime.Parse("hh:mm tt"),
+                                 EndTime = DateTime.Parse("hh:mm tt"),
                              }).ToList();
                 return Json(new {Status=200,data,Message="Success"},JsonRequestBehavior.AllowGet);
             }

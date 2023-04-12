@@ -16,15 +16,27 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.GameName)
                             </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.StartTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EndTime)
+                            </th>
                             <th>Action</th>
                         </tr>
-                    </thead>
+                    </thead>                    
                     @foreach (var item in Model)
                     {
                         <tbody>
                             <tr>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.GameName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StartTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EndTime)
                                 </td>
                                 <td>
                                     <a href="@Url.Action("UpdateGame", new {id = item.Id })"><i class="mdi mdi-database-edit"></i></a> |

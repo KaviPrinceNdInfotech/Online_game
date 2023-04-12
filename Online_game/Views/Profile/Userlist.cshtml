@@ -10,7 +10,7 @@
 <p>
     @using (Html.BeginForm("Userlist", "Profile", FormMethod.Get))
     {
-        <b> Search by</b> @*@Html.RadioButton("searchby", "Name", true)<b> Name</b>*@        
+        <b> Search by</b>
         @Html.TextBox("search") <input type="submit" value=" Search" />
     }
 </p>
@@ -18,6 +18,9 @@
 
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -36,6 +39,9 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

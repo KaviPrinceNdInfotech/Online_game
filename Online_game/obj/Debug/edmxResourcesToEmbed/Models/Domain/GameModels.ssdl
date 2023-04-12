@@ -158,6 +158,8 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GameName" Type="nvarchar" MaxLength="200" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
   </EntityType>
   <EntityType Name="GameType">
     <Key>

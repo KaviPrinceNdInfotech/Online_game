@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography;
 using System.Web;
+using System.Web.Http.Results;
 using System.Web.Mvc;
+using Online_game.Models.ApiViewModel;
 using Online_game.Models.Domain;
 using Online_game.Models.ViewModel;
 
@@ -28,8 +32,7 @@ namespace Online_game.Controllers
             }
             return View();
         }
-
-        [HttpPost]
+            [HttpPost]
         public ActionResult AddResult(ResultViewModel model)
         {
             try
@@ -84,6 +87,20 @@ namespace Online_game.Controllers
             }
             return View();
         }
+        public ActionResult Bidding()
+        {
+            var data = ent.Database.SqlQuery<BiddingHistoryViewModel>
+                ("select G.GameName,PH.Amount AS MaxAmount,PJ.Amount AS " +
+                "MinAmount from Games AS G with(nolock) inner join PlayHarup " +
+                "AS PH with(nolock) ON G.Id = PH.GameId INNER JOIN PlayJodis AS " +
+                "PJ with(nolock) ON G.Id = PJ.GameNumber").ToList();
+            //var data = ent.Database.SqlQuery<BiddingHistoryViewModel>
+            //    ("select G.GameName, Min(PH.Amount) AS MinHarupAmount, Max(PH.Amount) AS MaxHarupAmount, Min(PJ.Amount) " +
+            //    "AS MinJodisAmount, Max(PJ.Amount) AS MaxJodisAmount from Games AS G /with(nolock) inner join PlayHarup " +
+            //    "AS PH with(nolock) ON G.Id = PH.GameId INNER JOIN PlayJodis AS" +
+            //    " PJ with(nolock) ON G.Id = PJ.GameNumber group by G.GameName").ToList();
+            return View(data);                           
+        }
         public JsonResult GetListJodi(int id)
         {
             object data = null;
@@ -106,32 +123,7 @@ namespace Online_game.Controllers
             }
             return Json(data, JsonRequestBehavior.AllowGet);
         }
-
-        //public ActionResult ShowResult()
-        //{
-        //    try
-        //    {
-        //        var data = (from g in ent.Results
-        //                    join r in ent.Games on g.Id equals r.Id into table1
-        //                    from r in table1.ToList()
-        //                    join j in ent.PlayJodis on g.JodiId equals j.GameNumber into table2
-        //                    from j in table2.ToList()
-        //                    select new ShowResultViewModel
-        //                    {
-        //                        GameName = r.GameName,
-        //                        GameNumber = (int)j.GameNumber,
-        //                        Amount = (int)j.Amount
-
-        //                    }).ToList();
-        //        return View(data);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        throw new Exception("Server Error" + ex.Message);
-        //    }
-
-        //}
+    
 
         public ActionResult ResultList()
         {

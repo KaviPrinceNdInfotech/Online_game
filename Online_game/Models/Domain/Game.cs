@@ -16,5 +16,7 @@ namespace Online_game.Models.Domain
     {
         public int Id { get; set; }
         public string GameName { get; set; }
+        public Nullable<System.DateTime> StartTime { get; set; }
+        public Nullable<System.DateTime> EndTime { get; set; }
     }
 }

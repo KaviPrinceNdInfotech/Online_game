@@ -11,7 +11,9 @@ namespace Online_game.Models.ApiViewModel
         public int Id { get; set; }
 
         public string GameName { get; set; }
-       
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+
     }
     public class GameNumberDTO
     {

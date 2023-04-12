@@ -26,28 +26,24 @@ namespace Online_game.Controllers
             }
         }
 
+        
         public ActionResult AddGame()
         {
-            try
-            {
-                return View();
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception("Server Error" + ex.Message);
-            }
+             return View();          
         }
         [HttpPost]
         public ActionResult AddGame(GameModel model)
         {
             try
             {
+                //var data = ent.Games.ToList();
                 if (model != null)
                 {
                     Game gm = new Game()
                     {
                         GameName = model.GameName,
+                        StartTime=model.StartTime,
+                        EndTime=model.EndTime,
                     };
                     ent.Games.Add(gm);
                     ent.SaveChanges();

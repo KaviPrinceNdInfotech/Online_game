@@ -19,4 +19,5 @@ namespace Online_game.Models.ApiViewModel
         public string HarupDate { get; set; }
         public string GameName { get; set; }
     }
+    
 }

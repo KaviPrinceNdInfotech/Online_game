@@ -10,13 +10,13 @@
             <i class="mdi mdi-home"></i>
         </span> Dashboard
     </h3>
-    <nav aria-label="breadcrumb">
+    @*<nav aria-label="breadcrumb">
         <ul class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">
                 <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
             </li>
         </ul>
-    </nav>
+    </nav>*@
 </div>
 <div class="row">
     <div class="col-md-4 stretch-card grid-margin">
@@ -60,12 +60,12 @@
                 <img src="~/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                 <div class="card-wrap">
                     <div class="card-header">
-                        @*<a href="/Game/GameList">*@
-                            <span>Total Bidding</span>
-                            <div class="card-body">
-                                @ViewBag.Bidding
-                            </div>
-                        @*</a>*@                       
+                        <a href="/Result/Bidding">
+                        <span>Total Bidding</span>
+                        <div class="card-body">
+                            @ViewBag.BiddingHistory
+                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

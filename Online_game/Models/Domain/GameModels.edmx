@@ -163,6 +163,8 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GameName" Type="nvarchar" MaxLength="200" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
         </EntityType>
         <EntityType Name="GameType">
           <Key>
@@ -390,6 +392,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GameName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="StartTime" Type="DateTime" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="GameNumberHarup">
           <Key>
@@ -597,6 +601,8 @@
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="onlinegame_AdminModel.Game">
               <MappingFragment StoreEntitySet="Games">
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
                 <ScalarProperty Name="GameName" ColumnName="GameName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

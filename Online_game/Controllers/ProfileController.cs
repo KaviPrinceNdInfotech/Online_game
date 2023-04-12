@@ -54,18 +54,23 @@ namespace Online_game.Controllers
         {
             ViewBag.customer = ent.Registrations.ToList().Count();
             ViewBag.Gamelist = ent.Games.ToList().Count();
-            ViewBag.Bidding = ent.BiddingHistorys.ToList().Count();
-            
+            ViewBag.BiddingHistory = ent.Database.SqlQuery<BiddingHistoryViewModel>
+                    ("select G.GameName, Min(PH.Amount) AS MinHarupAmount, Max(PH.Amount) AS MaxHarupAmount, Min(PJ.Amount) " +
+                "AS MinJodisAmount, Max(PJ.Amount) AS MaxJodisAmount from Games AS G with(nolock) inner join PlayHarup " +
+                "AS PH with(nolock) ON G.Id = PH.GameId INNER JOIN PlayJodis AS" +
+                " PJ with(nolock) ON G.Id = PJ.GameNumber group by G.GameName").ToList().Count();
+
+
             return View();
         }
-        public ActionResult Userlist(string Searchby, string search)
+        public ActionResult Userlist(string Searchby,string search)
         {
             if (Searchby == "Name")
             {
                 var model = ent.Registrations.Where(emp => emp.Name == search || search == null).ToList();
                 return View(model);
 
-            }
+            }           
             else
             {
                 var model = ent.Registrations.Where(emp => emp.Name.StartsWith(search) || search == null).ToList();

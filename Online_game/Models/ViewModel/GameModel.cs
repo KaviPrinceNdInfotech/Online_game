@@ -8,5 +8,9 @@ namespace Online_game.Models.ViewModel
     public class GameModel
     {
         public string GameName { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+
+
     }
 }
